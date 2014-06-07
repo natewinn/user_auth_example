@@ -1,0 +1,17 @@
+Step One:
+%br
+= link_to "Click here to authenticate DropBox", @authorization_url
+%br
+%br
+Step Two:
+%br
+Click Allow
+%br
+%br
+Step Three:
+%br
+Copy auth code and paste here:
+%br
+= form_tag dropbox_auth_callback_path do
+	= text_field_tag :code
+	= submit_tag "Authenticate!!!!!"

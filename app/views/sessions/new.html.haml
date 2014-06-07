@@ -1,8 +1,16 @@
-%h1 Login
-
-= form_tag sessions_path do
-	= label_tag :email
-	= text_field_tag :email, params[:email]
-	= password_field_tag :password
-	%br
-	= submit_tag "Login"
+.header
+  .large-7.columns
+  .large-5.columns
+    .login-box
+      %h1.login Etsy Wishlist
+      %p.login An easy way to keep track of your favoite items on Etsy
+      = form_tag sessions_path do
+        .form.form-inline{role: "form"}
+          .form-group
+            = text_field_tag :email, params[:email], placeholder: "Email Address", class: "input form-control"
+          .form-group
+            = password_field_tag :password, params[:password], placeholder: "Password", class: "input form-control"
+          .form-group  
+            = submit_tag "Login", class: "small button"
+          %br
+          %br 

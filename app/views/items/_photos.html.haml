@@ -1,0 +1,5 @@
+%ul.small-block-grid-5
+  - @items.each do |item|
+    %li
+      %a.href{ href: "#{item.etsy_url}" }
+        %img.th{src: "#{item.url_170x135}"}

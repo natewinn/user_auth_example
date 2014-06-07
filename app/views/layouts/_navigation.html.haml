@@ -1,0 +1,4 @@
+- if current_user
+  = link_to "Log Out", logout_path, class: "btn btn-default"
+- else
+  = link_out "Log In", login_path, class: "btn btn-default"

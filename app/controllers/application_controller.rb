@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
   	end
   end
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to :back, :alert => "You can't do that silly!"
+  end
+
   private
 
   def current_user

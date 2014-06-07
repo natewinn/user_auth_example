@@ -1,0 +1,7 @@
+.large-6.columns.large-centered
+  = form_for @new_item do |f|
+    .row.collapse      
+      .small-10.columns
+        = f.text_field :etsy_url, placeholder: "Paste Etsy URL", class: "input form-control"
+      .small-2.columns
+        = f.submit "Add Item", class: "button postfix"

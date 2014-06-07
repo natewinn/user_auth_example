@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140521134629) do
+ActiveRecord::Schema.define(version: 20140603143644) do
+
+  create_table "bananas", force: true do |t|
+    t.string "name"
+    t.string "species"
+  end
 
   create_table "items", force: true do |t|
     t.string   "name"
@@ -21,6 +26,13 @@ ActiveRecord::Schema.define(version: 20140521134629) do
     t.integer  "wishlist_id"
     t.string   "etsy_url"
     t.string   "etsy_id"
+    t.string   "price"
+    t.integer  "num_favorers"
+    t.string   "url_170x135"
+  end
+
+  create_table "roles", force: true do |t|
+    t.string "name"
   end
 
   create_table "users", force: true do |t|
@@ -28,6 +40,9 @@ ActiveRecord::Schema.define(version: 20140521134629) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_digest"
+    t.string   "github_token"
+    t.string   "dropbox_token"
+    t.integer  "role_id"
   end
 
   create_table "wishlists", force: true do |t|

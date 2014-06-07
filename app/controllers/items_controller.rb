@@ -1,19 +1,20 @@
 class ItemsController < ApplicationController
+  # before_filter :authenticate_user!
 
-	def new
-		@item = Item.new
-	end
+  before_filter :load
 
-	def show
-		@item = Item.find(params[:id])
-		response = HTTParty.get("https://openapi.etsy.com/v2/listings/#{@item.etsy_id}/images?api_key=#{Rails.application.secrets.etsy_api_key}")
-		@images = response["results"]
-	end
+  def load
+  	@items = Item.all
+    @new_item = Item.new
+  end
+
+  def index
+  end
 
 	def create
 		@item = Item.new(item_params)
 		if @item.save
-			redirect_to wishlist_path(params[:wishlist_id]), notice: "Item added."
+			redirect_to items_path, notice: "Item added."
 		else
 			redirect_to :back, alert: "Failed to save."
 		end

@@ -1,0 +1,74 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= foundation.min
+ *= require_tree .
+ *= require_self
+ */
+
+h1, h2, h3, h4, h5, h6 { font-family: Lusitana; font-weight: 400 }
+body { font-family: Lusitana; font-weight: 400 }
+html { font-family: Lusitana; font-weight: 400 }
+p { font-size: 1.2em; font-family: Lusitana; font-weight: 400 }
+a { font-size: 1.1em;font-family: Lusitana; font-weight: 400; color: #fff  }
+.login { text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5); color: #fff; }
+.thumbnail-text { color: #d5641c; text-shadow: 0px 1px 0px rgba(255, 255, 255, 1) }
+.header-text { margin-bottom: 2rem; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); color: #fff }
+
+.header {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: url(<%= asset_path 'homepage.jpg' %>) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.login-box {
+  padding-top: 60%;
+  display: table-cell;
+  text-align: left;
+	}
+
+.page-header {
+  padding-top: 2%;
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+	}
+
+.centred {
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+}
+
+.user-background {
+  background-image: url(<%= asset_path 'wood.png' %>);
+  }
+
+.thumbnail {
+  background-color: #efefeb;
+  -webkit-box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.5);
+  -moz-box-shadow:    0px 3px 5px 0px rgba(50, 50, 50, 0.5);
+  box-shadow:         0px 3px 5px 0px rgba(50, 50, 50, 0.5);
+  }
+
+
+
+
+
+
+
+

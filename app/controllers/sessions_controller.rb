@@ -9,9 +9,9 @@ class SessionsController < ApplicationController
   	
   	if user
   		session[:user_id] = user.id
-  		redirect_to wishlists_path, notice: "logged in"
+  		redirect_to items_path, notice: "logged in"
   	else
-  		flash.now.alert = "invalid email or pw"
+  		flash.now.alert = "invalid email or password"
   		render :new
   	end
 	end
@@ -20,4 +20,5 @@ class SessionsController < ApplicationController
 		session[:user_id] = nil
 		redirect_to login_path, notice: "You logged out!"
 	end
+
 end

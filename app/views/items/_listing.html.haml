@@ -1,0 +1,13 @@
+.col-sm-2
+.col-sm-8
+  - @items.each do |item|
+    .col-sm-3
+      .thumbnail
+        %img.img-rounded.img-scale{src: "#{item.url_170x135}"}
+          .caption.text-center
+            %h4.thumbnail-text= truncate(item.name, length: 30, separator: ' ')
+            / %a{ :href => item.etsy_url }= truncate(item.name, length: 30, separator: ' ')
+            %p= truncate(item.description, length: 125, separator: ' ')
+            %p= item.price
+            %p= item.num_favorers
+.col-sm-2

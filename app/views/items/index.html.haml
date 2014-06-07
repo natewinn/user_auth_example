@@ -1,0 +1,33 @@
+.user-background
+  .row
+    = link_to "Log in with Facebook", "/auth/facebook"
+    /* Top Navigation */
+    = render "layouts/navigation"
+
+  .page-header
+    %h1.header-text Hey, Nate. You're up to $31.00
+  .row
+    /* URL Input Form */
+  - if can? :create, Item
+    = render "form"
+  .row
+    /* Photos */
+    = render "photos"
+
+
+  / = link_to "Hook up Github", github_auth_path
+  / .row
+  /   %h3 Create a new gist for Github
+  /   %h5 This really has nothing to do with wishlists or items
+  /   %br
+  /   =form_tag create_gist_path do
+  /     = label_tag :title
+  /     = text_field_tag :title
+  /     %br
+  /     = label_tag :description
+  /     = text_field_tag :description
+  /     %br
+  /     = label_tag "File content"
+  /     = text_field_tag :content
+  /     %br
+  /     = submit_tag "Create Gist!"
